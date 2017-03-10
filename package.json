@@ -1,0 +1,23 @@
+{
+  "name": "taptap",
+  "version": "1.0.0",
+  "description": "tap tap tap",
+  "main": "index.js",
+  "dependencies": {
+    "mithril": "^1.0.1",
+    "random-words": "0.0.1",
+    "tachyons": "^4.6.2"
+  },
+  "devDependencies": {
+    "budo": "^9.4.7",
+    "standard": "^9.0.1",
+    "tap": "^10.3.0"
+  },
+  "scripts": {
+    "start": "bin/start.sh",
+    "style": "standard --fix",
+    "test": "standard && tap test/*.js"
+  },
+  "author": "Brandon Parmenter <leftiness@gmail.com>",
+  "license": "MIT"
+}
