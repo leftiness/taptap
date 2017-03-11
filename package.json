@@ -5,7 +5,6 @@
   "main": "index.js",
   "dependencies": {
     "mithril": "^1.0.1",
-    "random-words": "0.0.1",
     "tachyons": "^4.6.2"
   },
   "devDependencies": {
