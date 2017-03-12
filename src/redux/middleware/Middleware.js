@@ -5,6 +5,6 @@ var Action = require('../action/Action.js')
 /**
  * Receive a redux action and perform some task
  */
-var Middleware = t.func([ Action ], t.Nil)
+var Middleware = t.func([ Action ], t.Nil, 'Middleware')
 
 module.exports = Middleware

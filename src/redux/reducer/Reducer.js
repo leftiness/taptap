@@ -3,6 +3,6 @@ var t = require('tcomb')
 var State = require('./State.js')
 var Action = require('../action/Action.js')
 
-var Reducer = t.func([ State, Action ], State)
+var Reducer = t.func([ State, Action ], State, 'Reducer')
 
 module.exports = Reducer
