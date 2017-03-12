@@ -1,9 +1,9 @@
 var t = require('tap')
 var td = require('testdouble')
 
-var ReducerFactory = require('../../../src/redux/reducer/ReducerFactory.js')
+var Factory = require('../../../src/redux/reducer/Factory.js')
 
-t.test('ReducerFactory', function (t) {
+t.test('reducer/Factory', function (t) {
   t.test('#withInit()', function (t) {
     var reducer = td.function('reducer')
     var state = {}
@@ -21,7 +21,7 @@ t.test('ReducerFactory', function (t) {
       td.when(reducer(state, action)).thenReturn(state)
       td.when(init()).thenThrow('should not use init function')
 
-      result = ReducerFactory.prototype.withInit(init, reducer, state, action)
+      result = Factory.prototype.withInit(init, reducer, state, action)
 
       t.equivalent(result, state)
       t.end()
@@ -33,7 +33,7 @@ t.test('ReducerFactory', function (t) {
       td.when(init()).thenReturn(state)
       td.when(reducer(state, action)).thenReturn(state)
 
-      result = ReducerFactory.prototype.withInit(
+      result = Factory.prototype.withInit(
         init,
         reducer,
         undefined,

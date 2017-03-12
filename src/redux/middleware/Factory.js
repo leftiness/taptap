@@ -9,9 +9,9 @@ var IS_CURRIED = true
 /**
  * Provide a static Middleware create function
  */
-var MiddlewareFactory = t.struct(
+var Factory = t.struct(
   {},
-  { name: 'MiddlewareFactory', strict: true }
+  { name: 'middleware/Factory', strict: true }
 )
 
 var Create = t.func([ Middleware, Store, Middleware, Action ], t.Nil, 'Create')
@@ -25,7 +25,7 @@ function create (task, store, next, action) {
   task(action)
 }
 
-MiddlewareFactory.prototype.Create = Create
-MiddlewareFactory.prototype.create = Create.of(create, IS_CURRIED)
+Factory.prototype.Create = Create
+Factory.prototype.create = Create.of(create, IS_CURRIED)
 
-module.exports = MiddlewareFactory
+module.exports = Factory

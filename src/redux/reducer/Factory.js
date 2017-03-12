@@ -10,9 +10,9 @@ var INIT = State.prototype.init
 /**
  * Provide a static Reducer create function
  */
-var ReducerFactory = t.struct(
+var Factory = t.struct(
   {},
-  { name: 'ReducerFactory', strict: true }
+  { name: 'reducer/Factory', strict: true }
 )
 
 var Init = State.prototype.Init
@@ -33,8 +33,8 @@ function create (init, reducer, state, action) {
     : reducer(init(), action)
 }
 
-ReducerFactory.prototype.Create = Create
-ReducerFactory.prototype.withInit = Create.of(create, IS_CURRIED)
-ReducerFactory.prototype.create = ReducerFactory.prototype.withInit(INIT)
+Factory.prototype.Create = Create
+Factory.prototype.withInit = Create.of(create, IS_CURRIED)
+Factory.prototype.create = Factory.prototype.withInit(INIT)
 
-module.exports = ReducerFactory
+module.exports = Factory

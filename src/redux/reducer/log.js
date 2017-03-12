@@ -1,4 +1,4 @@
-var ReducerFactory = require('./ReducerFactory.js')
+var Factory = require('./Factory.js')
 
 /*
  * TODO Redux requires some reducer in order to build. Remove before merging
@@ -11,4 +11,4 @@ function log (previous, action) {
   return previous
 }
 
-module.exports = ReducerFactory.prototype.create(log)
+module.exports = Factory.prototype.create(log)
