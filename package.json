@@ -12,7 +12,8 @@
   "devDependencies": {
     "budo": "^9.4.7",
     "standard": "^9.0.1",
-    "tap": "^10.3.0"
+    "tap": "^10.3.0",
+    "testdouble": "^1.11.2"
   },
   "scripts": {
     "start": "bin/start.sh",
