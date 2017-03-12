@@ -18,7 +18,7 @@
   "scripts": {
     "start": "bin/start.sh",
     "style": "standard --fix",
-    "test": "standard && tap test/*.js"
+    "test": "standard && tap test/**/*.js --cov"
   },
   "author": "Brandon Parmenter <leftiness@gmail.com>",
   "license": "MIT"
