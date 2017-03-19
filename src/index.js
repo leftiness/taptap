@@ -1,11 +1,15 @@
 var m = require('mithril')
-var redux = require('redux')
 
-var reducers = require('./redux/reducer/index.js')
-var middlewares = require('./redux/middleware/index.js')
+var store = require('./redux/store.js')
+var incrementor = require('./mithril/container/incrementor.js')
 
-var reducer = redux.combineReducers(reducers)
-var middleware = redux.applyMiddleware.apply(null, middlewares)
-var store = redux.createStore(reducer, middleware)
+var view = {
+  view: function () {
+    return m('div', [
+      m('div', JSON.stringify(store.getState())),
+      incrementor({ text: 'click me' }),
+    ])
+  }
+}
 
-m.render(document.body, 'hello')
+m.mount(document.body, view)
